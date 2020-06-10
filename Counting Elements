@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int countElements(vector<int>& arr) {//1,2,3
+        int count=0;
+        sort(arr.begin(),arr.end());
+        for(int i=0;i<arr.size();i++)
+        {
+           for(int j=0;j<arr.size();j++)
+           {
+             if(arr[j]==arr[i]+1)
+             {
+                 count++;
+                 break;
+             }
+           }
+        }
+        return count;
+    }
+    
+};
