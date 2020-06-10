@@ -1,0 +1,35 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        int l=10;
+        int s=0;
+        if(n==1)
+        {
+          return true;
+        }
+        
+        else
+        {
+        while(l>9)
+        {
+         while(n>0)
+         {
+        int x=n%10;
+            n=n/10;
+            s=s+x*x;
+
+         }n=s;
+          l=n;
+            if(l==1 ||l==7)
+            {
+             return true;
+            }
+            s=0;
+            
+            
+        }
+        }
+        return 0;
+    }
+        
+};
