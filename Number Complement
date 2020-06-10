@@ -1,0 +1,7 @@
+class Solution {
+public:
+    unsigned int findComplement(unsigned int n) {
+       unsigned int b=int(log2(n))+1;//number of bits
+       return n^int(pow(2,b)-1);// XOR number of bits with n
+    }
+};
