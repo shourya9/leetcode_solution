@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& a) {
+        int n=a.size(),max;
+        sort(a.begin(), a.end(), greater<int>());
+        for(int i=0;i<n-1;i++)
+        {  
+            if(a[i+1]!=0)
+            {
+            for(int j=i+1;j<n;j++)
+          {
+            sort(a.begin(), a.end(), greater<int>());
+              if(a[i]>a[j] && a[j]!=0)
+              {
+                  a[i]=a[i]-a[j];
+                  a[j]=0;
+                  sort(a.begin(), a.end(), greater<int>());
+                  i=0;
+                  j=0;
+                  for(int k=0;k<n;k++)
+                  {
+                      cout<<a[k]<<" ";
+                  }
+                  cout<<endl;
+    
+              }
+              else if(a[i]==a[j] && a[j]!=0)
+              {
+                  a[i]=0;
+                  a[j]=0;
+                  i=0;
+                  j=0;
+                 sort(a.begin(), a.end(), greater<int>());
+              }
+                
+          }
+            }
+    }
+        max=*max_element(a.begin(),a.end());
+            return max;
+        
+    }
+};
