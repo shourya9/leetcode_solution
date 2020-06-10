@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        if(ceil(sqrt(num))-floor(sqrt(num))==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
