@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int s=0,max,max1;
+        vector<int> A;
+        max1=*max_element(nums.begin(),nums.end());
+        A.push_back(max1);
+        for(int i=0;i<nums.size()-1;i++)
+        {   s=nums[i];
+          for(int j=i+1;j<nums.size();j++)
+          {
+           s=s+nums[j];
+              if(s>max1)
+              {
+           A.push_back(s);
+           max1=s;   //Update the max1 value
+              }
+          }
+            s=0;
+        }
+        max=*max_element(A.begin(),A.end());
+       return max;
+    }
+};
