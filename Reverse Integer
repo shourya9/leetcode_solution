@@ -1,0 +1,29 @@
+class Solution {
+public:
+     int reverse( int x) {
+        long long int l,m=0,y;
+        y=abs(x);
+        while(y>0)
+        {
+            l=y%10;
+            m=m*10+l;
+            y=y/10;
+        }
+         //cout<<m<<endl;
+        if(m<INT_MIN || m>INT_MAX)
+            return 0;
+         else
+         {
+             if(x>0)
+             {
+                 return m;
+             }
+             else
+             {
+                 return -m;
+             }
+         }
+         
+            
+    }
+};
