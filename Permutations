@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& n) {
+        sort(n.begin(),n.end());
+        vector<vector<int>> v;
+        bool value=true;
+        while(value==true)
+        {
+            v.push_back(n);
+            value=next_permutation(n.begin(),n.end());
+        }
+        return v;
+    }
+};
