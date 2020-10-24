@@ -1,0 +1,11 @@
+class Solution {
+public:
+    void rotate(vector<int>& n, int k) {
+        vector<int>v(n.size(),0);
+        for(int i=0;i<n.size();i++)
+        {
+            v[(n.size()+k+i)%n.size()]=n[i];
+        }
+        n=v;
+    }
+};
